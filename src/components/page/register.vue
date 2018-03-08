@@ -1,12 +1,12 @@
 <template>
-  <div class="logandreg">
-      login
-      <router-view></router-view>
+  <div class="register">
+      register
   </div>
 </template>
 
 <script>
 export default {
+
 }
 </script>
 
