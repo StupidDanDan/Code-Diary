@@ -9,8 +9,8 @@ import mine from '@/components/page/mine'
 import index from '@/components/page/index'
 
 import logandreg from '@/components/page/logandreg'
-import login from '@/components/page/logandreg/login'
-import register from '@/components/page/logandreg/register'
+import login from '@/components/page/login'
+import register from '@/components/page/register'
 
 
 Vue.use(Router)
