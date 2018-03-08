@@ -8,9 +8,10 @@ import book from '@/components/page/book'
 import mine from '@/components/page/mine'
 import index from '@/components/page/index'
 
+import logandreg from '@/components/page/logandreg'
 import login from '@/components/page/login'
 import register from '@/components/page/register'
-import logandreg from '@/components/page/logandreg'
+
 
 Vue.use(Router)
 
