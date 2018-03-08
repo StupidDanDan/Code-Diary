@@ -5,6 +5,8 @@
 </template>
 
 <script>
+
+import logandreg from '@/components/page/logandreg'
 export default {
   name: 'App',
 }
