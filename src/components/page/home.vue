@@ -57,15 +57,15 @@ export default {
  body{
      background: #f6f6f6;
  }
- ul{
+ .home ul{
    text-align:left;
    margin:0 16px;
  }
-  ul li{
+ .home ul li{
     border-bottom:1px solid #ccc;
     padding:20px 0;
   }
- a{
+ .home a{
    margin-right:20px
  }
  .hotCon{
@@ -106,7 +106,7 @@ export default {
    color:#77839c;
    font-size:14px
  }
-ul li{
+.home ul li{
   position:relative;
 }
  .TopstoryItem-rightButton {
