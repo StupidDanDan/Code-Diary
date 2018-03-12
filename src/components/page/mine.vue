@@ -43,7 +43,7 @@ import location from '@/components/page/mine/location'
 export default {
   data () {
       return {
-        MenuView: [false,true,false,false,false]
+        MenuView: [true,false,false,false,false]
       }
   },
   components:{

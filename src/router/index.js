@@ -6,6 +6,7 @@ import home from '@/components/page/home'
 import classify from '@/components/page/classify'
 import book from '@/components/page/book'
 import mine from '@/components/page/mine'
+import detailsarticle from '@/components/page/detailsarticle'
 import index from '@/components/page/index'
 
 import logandreg from '@/components/page/logandreg'
@@ -57,6 +58,11 @@ export default new Router({
                     path: 'mine',
                     name: 'mine',
                     component: mine
+                },
+                {
+                    path: 'detailsarticle',
+                    name: 'detailsarticle',
+                    component: detailsarticle
                 }
             ]
         },

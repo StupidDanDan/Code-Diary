@@ -52,12 +52,18 @@
                                  this.formInline.user = '';
                                  this.formInline.password = '';
                             } else {
-                                this.$cookieStore.setCookie('user', this.formInline.user,2)
-                                this.$cookieStore.setCookie('password', this.formInline.password,2)
-                                // console.log(this.$cookieStore.getCookie('user'))
-                                this.$Message.success('登录成功，3秒之后为您跳转'); 
                                 this.formInline.user = '';
                                 this.formInline.password = '';  
+
+                                this.$cookieStore.setCookie('userid', response.data.userid,2)
+                                this.$cookieStore.setCookie('userpassword', response.data.userpassword,2)
+                                this.$cookieStore.setCookie('usercanuser', response.data.usercanuser,2)
+                                this.$cookieStore.setCookie('usersex', response.data.usersex,2)
+                                this.$cookieStore.setCookie('usershowme', response.data.usershowme,2)
+                                this.$cookieStore.setCookie('userphoto', response.data.userphoto,2)
+                                this.$cookieStore.setCookie('userphone', response.data.userphone,2)
+                                // console.log(this.$cookieStore.getCookie('user'))
+                                this.$Message.success('登录成功，3秒之后为您跳转'); 
                                 var _this = this;
                                 setTimeout(function() {
 									_this.$router.push('/index');

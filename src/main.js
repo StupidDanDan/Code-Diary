@@ -17,11 +17,18 @@ import 'iview/dist/styles/iview.css';
 
 
 import { getCookie, setCookie, delCookie } from './assets/cookie'
+// import { returnAllTime, returnYearMonth, returnTime } from './assets/changedate'
 Vue.prototype.$cookieStore = {
     getCookie,
     setCookie,
     delCookie
 }
+
+// Vue.prototype.changedate = {
+//     returnAllTime,
+//     returnYearMonth,
+//     returnTime
+// }
 
 Vue.config.productionTip = false
 

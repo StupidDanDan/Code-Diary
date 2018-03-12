@@ -7,6 +7,39 @@
     <title>code-diary</title>
     <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_582683_jimkjdblw990ms4i.css">
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.1&key=50f252ff92dde46313d2fb30a3848855"></script>
+    <!-- <script type="text/javascript" src="src/assets/cdate.js"></script> -->
+    <script>
+        var tools = {
+            //返回年月日时分
+            returnAllTime: (nowtime) => {
+                let date = new Date(nowtime);
+                return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+            },
+            //返回年月日
+            returnYearMonth: (nowtime) => {
+                var date = new Date(nowtime);
+                let hour = date.getHours();
+                if (hour < 10) {
+                    hour = '0' + hour;
+                }
+                return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + hour;
+
+            },
+            returnTime: (nowtime) => {
+                let date = new Date(nowtime);
+                var hour = date.getHours();
+                var minute = date.getMinutes();
+                if (hour < 10) {
+                    hour = '0' + hour;
+                }
+                if (minute < 10) {
+                    minute = '0' + minute;
+                }
+                return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + hour + ':' + minute;
+            }
+        }
+    </script>
     <style>
         body {
             background: #f6f6f6 !important;
@@ -19,5 +52,6 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
 </body>
+<!-- <script type="text/javascript" src="../src/assets/changedate.js"></script> -->
 
 </html>
