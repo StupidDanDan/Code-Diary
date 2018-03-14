@@ -12,6 +12,15 @@ Vue.prototype.qs = qs;
 Vue.use(VueAxios, axios)
     // Vue.prototype.$http = axios
 
+import VueLazyload from 'vue-lazyload' //引入这个懒加载插件
+
+Vue.use(VueLazyload, {
+    preLoad: 1.3,
+    error: '/dist/error.jpg',
+    loading: '/dist/loading.png',
+    attempt: 1
+})
+
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 

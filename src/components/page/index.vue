@@ -1,10 +1,12 @@
 <template>
   <div id="index">
     <codeheader></codeheader>
-    <div class="globalwrap">  
-        <div class="globalcontent">
-            <router-view/>
-        </div>
+    <div class="globalwrap"> 
+        <transition name="fade" mode="out-in">
+            <div class="globalcontent">
+                <router-view/>
+            </div>
+        </transition>
         <div class="globalmenu">
             <router-link tag="div" class="globalmenuitem" :to="{ name: 'home'}">
                 <i class="iconfont icon-bianfuxia-"></i>
@@ -18,17 +20,13 @@
                 <i class="iconfont icon-duyandashu"></i>
                 <i class="ifont">书籍</i>
             </router-link>
-            <router-link tag="div" class="globalmenuitem" :to="{ name: 'book'}">
+            <router-link tag="div" class="globalmenuitem" :to="{ name: 'writearticle'}">
                 <i class="iconfont icon-xiaotou"></i>
                 <i class="ifont">写文章</i>
             </router-link>
             <router-link tag="div" class="globalmenuitem" :to="{ name: 'mine'}">
                 <i class="iconfont icon-jiaodoushiwushi"></i>
                 <i class="ifont">个人信息</i>
-            </router-link>
-            <router-link tag="div" class="globalmenuitem" :to="{ name: 'book'}">
-                <i class="iconfont icon-qigai"></i>
-                <i class="ifont">关于我们</i>
             </router-link>
         </div>
     </div>
@@ -95,6 +93,7 @@ export default {
     }
   }
   .globalcontent{
+      margin-bottom: 30px;
       background: #FFFFFF;
       border-radius: 1%;
       width: 900px;

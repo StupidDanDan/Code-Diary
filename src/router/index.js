@@ -7,6 +7,8 @@ import classify from '@/components/page/classify'
 import book from '@/components/page/book'
 import mine from '@/components/page/mine'
 import detailsarticle from '@/components/page/detailsarticle'
+import detailsbook from '@/components/page/detailsbook'
+import writearticle from '@/components/page/writearticle'
 import index from '@/components/page/index'
 
 import logandreg from '@/components/page/logandreg'
@@ -63,6 +65,16 @@ export default new Router({
                     path: 'detailsarticle',
                     name: 'detailsarticle',
                     component: detailsarticle
+                },
+                {
+                    path: 'detailsbook',
+                    name: 'detailsbook',
+                    component: detailsbook
+                },
+                {
+                    path: 'writearticle',
+                    name: 'writearticle',
+                    component: writearticle
                 }
             ]
         },

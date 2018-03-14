@@ -53,6 +53,26 @@ export default {
                     console.log(this.creatarticle)
                   }
        })
+    },
+     methods:{
+      godetailsarticle(num){
+        this.$router.push({
+            path: '/index/detailsarticle', // 路径
+            query: { // 查询参数
+              detailpageid: num,
+            }
+        })
+      }
+    },
+    filters:{
+      filterByTime(value){
+        if(value!=""){       
+          return tools.returnYearMonth(value);
+        }
+        else{
+          return value;
+        }
+      }
     }
 }
 </script>
@@ -84,6 +104,22 @@ export default {
     font-size: 16px;
     margin-top: 90px;
     margin-left: 200px;
+  }
+  .articletable{
+    .tableheader{
+      border-bottom: 1px solid #8590a6;
+      padding: 10px 0;
+      color: #8590a6;
+      text-align: center;
+      cursor: pointer;
+      &:nth-last-of-type(1){
+        border-bottom:0;
+      }
+      >div{
+        display: inline-block;
+        width: 200px;
+      }
+    }
   }
 }
 

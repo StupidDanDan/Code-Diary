@@ -1,24 +1,20 @@
 <template>
   <div class="mine">
-    <Menu  active-name="1" @on-select="goMenuView">
+    <Menu  @on-select="goMenuView">
         <MenuGroup title="文章管理">
             <MenuItem name="1">
-                <Icon type="document-text"></Icon>
-                我的文章              
+                 &nbsp;<Icon type="document-text"></Icon>我的文章              
             </MenuItem>
             <MenuItem name="2">
-                <Icon type="chatbubbles"></Icon>
-                我的收藏
+                <Icon type="chatbubbles"></Icon>我的收藏
             </MenuItem>
         </MenuGroup>
         <MenuGroup title="其他管理">
             <MenuItem name="3">
-                <Icon type="heart"></Icon>
-                城市天气
+                <Icon type="heart"></Icon>城市天气
             </MenuItem>
             <MenuItem name="4">
-                <Icon type="heart-broken"></Icon>
-                显示位置
+                <Icon type="heart-broken"></Icon>显示位置
             </MenuItem>
             <!-- <MenuItem name="5">
                 <Icon type="heart-broken"></Icon>

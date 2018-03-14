@@ -6,13 +6,7 @@
     </div>
     <div class="detailsarticlediv" v-if="detailsarticleshow[1]">
         <!--作者部分 -->
-        <div class="authormessage">
-            <img class="authorimg" :src="articleauthor.userphoto"></img>
-            <div class="authorcontent">
-                <p>{{articleauthor.userid}}</p>
-                <p>{{articleauthor.usershowme}}</p>
-            </div>
-        </div>
+        <usermessagediv :articleauthorid="detailsarticle.detaileuserid"></usermessagediv>
         <!-- 文章部分 -->
         <div class="articlemessage">
             <div class="articlecontent" v-html="detailsarticle.detailpagecontent"></div>
@@ -28,6 +22,7 @@
 </template>
 
 <script>
+import usermessagediv from '@/components/common/usermessagediv'
 export default {
     data (){
       return {
@@ -35,31 +30,21 @@ export default {
         articleauthor:[],
         detailsarticleshow:[true,false],
       }
-    }, 
+    },
+    components:{
+        usermessagediv
+    },
     created() {
-        console.log(this.$route.query.detailpageid)
         this.axios.get('http://txspring.cn:8010/getContentByPageDeatilId?detailid=' + this.$route.query.detailpageid).then((res)=>{
             if(res.data.type=="0"){
-                var _this = this;
-                setTimeout(function() {
-					_this.$Message.error('查找出错，请联系管理员');
-				}, 1000);          
+                setTimeout(() => {
+                    this.$Message.error('查找出错，请联系管理员');
+                }, 1000);            
             }else{
-                var _this = this;
-                setTimeout(function() {
-					_this.detailsarticleshow=[false,true];
-                }, 1000);
                 this.detailsarticle = res.data;
-                this.axios.get('http://txspring.cn:8010/findByUserIdDao?userid='+ this.detailsarticle.detaileuserid).then((res)=>{
-                  if(res.data.type=="0"){
-                    this.$Message.error('作者信息读取失败');
-                  }
-                  else{
-                      this.articleauthor = res.data;
-                      console.log(this.articleauthor)
-                  }
-                })
-                // console.log(this.detailsarticle)
+                setTimeout(() => {
+                    this.detailsarticleshow=[false,true];
+                }, 1000);               
             }
        })
     },
@@ -88,30 +73,7 @@ export default {
         padding: 40px;
     }
     .authormessage{
-        padding-bottom: 20px;
         border-bottom:1px solid #ebebeb;
-        text-align: left;
-        >div{
-            display: inline-block;
-            vertical-align: top;    
-        }
-        .authorimg{
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-        .authorcontent{
-            >p{
-                line-height: 25px;
-                font-size: 14px;
-                color: #8590a6;
-                &:nth-of-type(1){
-                    font-weight: 900;
-                    color: #444;
-                }
-            }
-        }
     }
     .articlemessage{
         padding: 20px;
