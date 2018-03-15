@@ -14,7 +14,9 @@
                 <p>{{detailsarticle.createdAt | filterByTime}}</p>
                 <p>著作权归属作者所有</p>
             </div>
+             
         </div>
+        <homeconbtn :detailpageid="detailsarticle.detailpageid" :detailsarticle="detailsarticle"></homeconbtn>
         <!-- 评论部分 -->
         
     </div>
@@ -23,6 +25,7 @@
 
 <script>
 import usermessagediv from '@/components/common/usermessagediv'
+import homeconbtn from '@/components/common/homeconbtn'
 export default {
     data (){
       return {
@@ -32,7 +35,7 @@ export default {
       }
     },
     components:{
-        usermessagediv
+        usermessagediv,homeconbtn
     },
     created() {
         this.axios.get('http://txspring.cn:8010/getContentByPageDeatilId?detailid=' + this.$route.query.detailpageid).then((res)=>{
@@ -41,7 +44,9 @@ export default {
                     this.$Message.error('查找出错，请联系管理员');
                 }, 1000);            
             }else{
+                
                 this.detailsarticle = res.data;
+                console.log(this.detailsarticle);
                 setTimeout(() => {
                     this.detailsarticleshow=[false,true];
                 }, 1000);               
