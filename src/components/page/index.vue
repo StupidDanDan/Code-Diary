@@ -26,7 +26,7 @@
             </router-link>
             <router-link tag="div" class="globalmenuitem" :to="{ name: 'mine'}">
                 <i class="iconfont icon-jiaodoushiwushi"></i>
-                <i class="ifont">个人信息</i>
+                <i class="ifont">个人中心</i>
             </router-link>
         </div>
     </div>

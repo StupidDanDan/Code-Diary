@@ -6,6 +6,8 @@
     <i slot="icon" class="iconfont icon-renwutixing"></i>
     <!-- icon 提示 -->
     <i slot="icon" class="iconfont icon-weixin"></i>
+    <!-- 退出 -->
+    <i slot="icon" class="iconfont icon-tuichu2" @click="leave()"></i>
     <!-- 头像 -->
     <img class="touxiang" v-lazy="articleauthor.userphoto"></img>
     
@@ -32,6 +34,13 @@ export default {
             this.articleauthor = res.data;
         }
     })
+  },
+  methods:{
+    leave(){
+      this.$cookieStore.setCookie('userid', "", -1);  
+      this.$cookieStore.setCookie('userpassword', "", -1);  
+      this.$router.push({path: '/'})
+    }
   }
 }
 </script>
