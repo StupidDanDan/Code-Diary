@@ -1,0 +1,32 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>code-diary</title><link rel="shortcut icon" type=image/x-icon href=CDlogo.png><link rel=stylesheet type=text/css href=http://at.alicdn.com/t/font_582683_y8jn8zr14w265hfr.css><script src=https://cdn.bootcss.com/jquery/1.12.4/jquery.js></script><script type=text/javascript src="http://webapi.amap.com/maps?v=1.4.1&key=50f252ff92dde46313d2fb30a3848855"></script><script>var tools = {
+            //返回年月日时分
+            returnAllTime: (nowtime) => {
+                let date = new Date(nowtime);
+                return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+            },
+            //返回年月日
+            returnYearMonth: (nowtime) => {
+                var date = new Date(nowtime);
+                let hour = date.getHours();
+                if (hour < 10) {
+                    hour = '0' + hour;
+                }
+                return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + hour;
+
+            },
+            returnTime: (nowtime) => {
+                let date = new Date(nowtime);
+                var hour = date.getHours();
+                var minute = date.getMinutes();
+                if (hour < 10) {
+                    hour = '0' + hour;
+                }
+                if (minute < 10) {
+                    minute = '0' + minute;
+                }
+                return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + hour + ':' + minute;
+            }
+        }</script><style>body {
+            background: #f6f6f6 !important;
+            height: 100% !important;
+        }</style><link href=./static/css/app.1db8fb98d0269da71eacc1e61e70119a.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.3ad1d5771e9b13dbdad2.js></script><script type=text/javascript src=./static/js/vendor.82592c7141cc58d59770.js></script><script type=text/javascript src=./static/js/app.6187972bc4d370828248.js></script></body></html>
